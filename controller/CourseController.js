@@ -25,8 +25,16 @@ export function apiCreateCourse(req, res) {
 }
 
 export function apiUpdateCourse(req, res) {
-    console.log(`Updating course ${req.params.courseId}`);
+    console.log(`Updating course ${req.params.courseId}\n
+    ${req.params.courseId}, ${req.body.courseTitle}, ${req.body.courseNumber}, ${req.body.courseStudentAmount}`);
     const updateCourse = updateCoruse(req.params.courseId, req.body.courseTitle, req.body.courseNumber, req.body.courseStudentAmount);
     console.log(updateCourse);
     res.json(updateCourse);
+}
+
+export function apiDeleteCourse(req, res) {
+    console.log(`delete the course ${req.params.courseId}`);
+    const deletedCourse = deleteCoruse(req.params.courseId);
+    console.log(deletedCourse);
+    res.json(deletedCourse);
 }

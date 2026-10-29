@@ -37,7 +37,7 @@ export function updateCoruse(id, title, number, studentAmount) {
 export function deleteCoruse(id) {
     let index = 0;
     for(let course of courseList){
-        if(course.id === id) {
+        if(course.courseId == id) {
             courseList.splice(index, 1);
             return id;
         }
