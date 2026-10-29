@@ -17,9 +17,16 @@ export function apiGetCourse(req, res) {
 }
 
 export function apiCreateCourse(req, res) {
-    console.log(`create the course ${req.params.courseTitle}: ${req.params.courseNumber}. with ${req.body.courseStudentAmount} allowed students `);
+    console.log(`create the course ${req.body.courseTitle}: ${req.body.courseNumber}. with ${req.body.courseStudentAmount} allowed students `);
     const course = createCoruse(req.body.courseTitle, req.body.courseNumber, req.body.courseStudentAmount);
     console.log(course);
     res.json(course);
 
+}
+
+export function apiUpdateCourse(req, res) {
+    console.log(`Updating course ${req.params.courseId}`);
+    const updateCourse = updateCoruse(req.params.courseId, req.body.courseTitle, req.body.courseNumber, req.body.courseStudentAmount);
+    console.log(updateCourse);
+    res.json(updateCourse);
 }

@@ -19,7 +19,7 @@ export function getAllCoruses() {
 
 //getting 1 course
 export function getOneCourse(courseId) {
-    return courseList.find(course => course.id === courseId);
+    return courseList.find(course => course.courseId == courseId);
 }
 
 //updating the course

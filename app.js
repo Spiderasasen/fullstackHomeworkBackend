@@ -1,5 +1,5 @@
 import {createCoruse} from "./services/CourseServices.js";
-import {apiGetCourse, apiGetAllCourses, apiCreateCourse} from "./controller/CourseController.js";
+import {apiGetCourse, apiGetAllCourses, apiCreateCourse, apiUpdateCourse} from "./controller/CourseController.js";
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
@@ -15,9 +15,9 @@ createCoruse("Web Development", 3023, 30);
 
 //http calls
 app.get("/courses", apiGetAllCourses); //this is calling for all coruses
-app.get("/courses/:id", apiGetCourse); //this is calling for a single coruse
+app.get("/courses/:courseId", apiGetCourse); //this is calling for a single coruse
 app.post("/courses", apiCreateCourse); //this create a new coruse
-
+app.put("/courses/:courseId", apiUpdateCourse); //updating the courses
 
 //calling the listener function
 app.listen(port, startUp)
